@@ -1,7 +1,13 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <br>
+    <Input v-model="value" placeholder="Enter something..." style="width: 300px" />
+    <HelloWorld msg="Welcome to Your Vue.js ..."/>
+    <router-link to="/copy" tag="a">index</router-link>
+    <router-link to="/hello" tag="a">hello</router-link>
+    <router-view>
+    </router-view>
   </div>
 </template>
 
@@ -12,11 +18,17 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  data() {
+    return {
+      value: ''
+    }
+  },
 }
 </script>
 
-<style>
+<style lang="scss">
+$yellowGreen: yellowgreen;
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,5 +36,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  color: $yellowGreen
 }
 </style>
